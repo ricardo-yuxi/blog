@@ -12,24 +12,26 @@
           <div class="col-sm-8">
       <% @articles.each do |article| %>
             <article>
-              <h3>
-                <%= article.title %>
-              </h3>
-              
-              <p class="text-right">
-              <%= l article.created_at, format: "%d %B %Y" %>
-              </p>
+              <div class="art-header">
+                <h3>
+                  <%= link_to article.title, article_path(article) %>
+                </h3>
+                
+                <p class="text-info">
+                <%= l article.created_at, format: "%d %B %Y" %>
+                </p>
+              </div>
                 
               <p>
                 <%= article.text %>
               </p>
 
-              <%= link_to t('show'), article_path(article) %>
-              <%= link_to t('edit'), edit_article_path(article) %>
-              <%= link_to t('delete'), article_path(article), method: :delete, data: { confirm: 'Are you sure?' } %>
+              <p class="text-info">
+                <%= pluralize(article.comments.count, 'comentario') %> 
+              </p>
 
             </article>
-            <% end %> 
+      <% end %> 
           </div>
           
           <aside>
@@ -39,9 +41,10 @@
                   <%= t('latest_articles')%>
                 </a>
                 <% @articles.limit(5).each do |article| %>
-                
-                <%= link_to article.title, article_path(article), class: "list-group-item" %>
-                
+                <span class="list-group-item">
+                  <%= link_to article.title, article_path(article)  %>
+                  <%= l article.created_at, format: "%d %B %Y" %>
+                </span>
                 <% end %>
               </div>
             </div>
