@@ -1,0 +1,19 @@
+@import "bootstrap-sprockets";
+@import "_variables";
+@import "bootstrap";
+@import "_bootswatch";
+
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+.main-blog-title {
+  height: 100px;
+}
+
+article{
+  border: 1px solid #eee;
+  padding: .8em;
+  margin-bottom: .8em;
+}
