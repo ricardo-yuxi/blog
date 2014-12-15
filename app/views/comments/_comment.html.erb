@@ -1,15 +1,15 @@
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.commenter %>
-</p>
+<div class="comments">
+  <small class="text-info">
+    <strong>Fecha:</strong>
+    <%= l comment.created_at, format: "%d %B %y" %>
+  </small>
+  <p>
+    <%= comment.body %>
+  </p>
+</div>
 
 <p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
-</p>
-
-<p>
-  <%= link_to 'Destroy Comment', [comment.article, comment],
+  <!--%= link_to 'Destroy Comment', [comment.article, comment],
                method: :delete,
-               data: { confirm: 'Are you sure?' } %>
+               data: { confirm: 'Are you sure?' } %-->
 </p>

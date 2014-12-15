@@ -3,26 +3,21 @@
     <div class="page-header">
       <h1><%= t('list_articles') %></h1>
     </div>
-
-  
-    
-
+    <%= link_to 'New article', new_article_path %>
       <div class="section">
         <div class="row">
           <div class="col-sm-8">
-      <% @articles.each do |article| %>
-            <article>
-              <div class="art-header">
-                <h3>
+            <% @articles.each do |article| %>
+            <article class="article">
+                <h3 class="margin-title">
                   <%= link_to article.title, article_path(article) %>
                 </h3>
                 
                 <p class="text-info">
                 <%= l article.created_at, format: "%d %B %Y" %>
                 </p>
-              </div>
                 
-              <p>
+              <p class="text-uppercase">
                 <%= article.text %>
               </p>
 
@@ -52,15 +47,7 @@
 
         </div>
 
-       
-
       </div>
-
-          
-      
-          
-       
-
 
   </div>
 </div>

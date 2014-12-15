@@ -11,9 +11,17 @@ h1, h2, h3, h4, h5 {
 .main-blog-title {
   height: 100px;
 }
-
-article{
+.comments {
+  background: #ebebeb;
   border: 1px solid #eee;
+  border-radius: 6px;
+  padding: .8em;
+  margin-bottom: .8em;
+}
+
+.article {
+  border: 1px solid #eee;
+  border-radius: 6px;
   padding: .8em;
   margin-bottom: .8em;
 }
@@ -22,6 +30,9 @@ article .art-header {
 
 }
 
+.margin-title {
+  margin-bottom: 8px;
+}
 .rojo {
   color: #eb6864;
 }
