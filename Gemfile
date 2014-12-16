@@ -14,7 +14,13 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
-gem 'spring',        group: :development
+gem 'devise'
+
+group :development do
+  gem 'spring'
+  gem 'guard'
+  gem 'guard-livereload', require: false  
+end
 
 
 
