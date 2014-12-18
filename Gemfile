@@ -15,6 +15,7 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
 gem 'devise'
+gem 'gravatar-ultimate'
 
 group :development do
   gem 'spring'
