@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
-  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+  # http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+
+  before_action :authenticate_user!, only: [:new, :edit, :destroy] 
 
   def index
     @articles = Article.all.order(created_at: :desc).limit(10)
@@ -19,6 +21,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.user_id = current_user.id
 
     if @article.save
       render 'create'
