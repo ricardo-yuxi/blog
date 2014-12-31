@@ -2,6 +2,7 @@ es:
   hello: "Hola mundo"
   list_articles: "Lista de Articulos"
   latest_articles: "Ultimos Articulos"
+  more_commented: "Mas Comentados"
   show: "Ver"
   edit: "Editar"
   delete: "Eliminar"

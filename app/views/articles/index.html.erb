@@ -24,7 +24,7 @@
                 <h3 class="margin-title">
                   <%= link_to article.title, article_path(article) %>
                 </h3>
-                
+                <small><%= article.user.email  %></small>
                 <p class="text-info">
                 <%= l article.created_at, format: "%d %B %Y" %>
                 </p>
@@ -41,7 +41,7 @@
               <% end %>  
 
               <p class="text-info">
-                <%= pluralize(article.comments.count, 'comentario') %> 
+                #<%= pluralize(article.comments.count, 'comentario') %> 
               </p>
 
             </article>
@@ -58,7 +58,27 @@
                 <% @articles.order(created_at: :desc).limit(5).each do |article| %>
                 <span class="list-group-item">
                   <%= link_to article.title, article_path(article)  %>
-                  <%= l article.created_at, format: "%d %B %Y" %>
+                  <p>
+                    <%= l article.created_at, format: "%d %B %Y" %>
+                  </p>
+                </span>
+                <% end %>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="list-group">
+                <a class="list-group-item active">
+                  <%= t('more_commented')%>
+                </a>
+                <% @art_top_five.each do |index| %>
+                <span class="list-group-item">
+                  <%= link_to index.article.title, article_path(index.article)  %>
+                  <p>
+                    <%= l index.article.created_at, format: "%d %B %Y" %>
+                    <span class="text-info">
+                      #<%= pluralize(index.article.comments.count, 'comentario') %>
+                    </span>  
+                  </p>
                 </span>
                 <% end %>
               </div>
